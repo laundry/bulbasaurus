@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- http://pokewalls.wordpress.com/2011/04/15/1-bulbasaur/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+    <head>
+        <title>Andrew Fandrianto -- Home</title>
+        <script src="mootools-core-1.4.5-full-nocompat.js"></script>
+        <script src="mootools-more-1.4.0.1.js"></script>
+        <script type="text/javascript">
+            var crude_lock = true;
+            function introduce(item, index)
+            {
+                item.hide();
+                item.slideIn();
+            }
+            function slide_title()
+            {
+                if (crude_lock)
+                {
+                    crude_lock = false;
+                    items = [new Fx.Slide('headline', {mode: 'horizontal'}), new Fx.Slide('name', {mode: 'horizontal'}), new Fx.Slide('title_container', {mode: 'horizontal'}), new Fx.Slide('title_shadow', {mode: 'horizontal'})];
+                    Array.each(items, introduce);
+                }
+                crude_lock = true;
+            }
+            window.addEvent('domready', function() {
+                slide_title();
+            });
+            window.addEvent('resize', function() {
+                slide_title();
+            });
+        </script>
+        <style type="text/css">
+            .title_container
+            {
+                background: rgba(77,48,105,1);
+                padding: 10px 10px 10px 20px;
+                border: solid 10px rgba(77,48,105,1);
+                font-size: 50px;
+            }
+            .body_container
+            {
+                background: #fff;
+                border: solid 10px #fff;
+                font-size: 15px;
+                padding: 10px 10px 10px 20px;
+            }
+            .title_shadow
+            {
+                position: absolute;
+                width: 100%;
+                height: 5px;
+                background: -moz-linear-gradient(top,  rgba(77,48,105,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(77,48,105,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top,  rgba(77,48,105,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top,  rgba(77,48,105,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top,  rgba(77,48,105,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+                background: linear-gradient(to bottom,  rgba(77,48,105,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cceecc', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+            }
+            .bulby
+            {
+                position: absolute;
+                right: 0%;
+                top: 0%;
+                padding: 10px 30px 0px 0px;
+            }
+            img.bulb
+            {
+                padding: 5px 0px 0px 0px;
+                height: 60px;
+                opacity: 0.9;
+            }
+            img.bulb:hover
+            {
+                opacity: 1;
+            }
+            body
+            {
+                font-family: 'Segoe UI', Verdana, sans-serif;
+            }
+            a
+            {
+                text-decoration: none;
+                color: orange;
+            }
+            a:hover
+            {
+                color: yellow;
+            }
+            div.headline
+            {
+                float: right;
+            }
+            div.name
+            {
+                float: right;
+            }
+        </style>
+        <!-- pokemon! -->
+        <style>
+          video {
+            display: none;
+          }
+          * {
+            font-family: Verdana, Arial, sans-serif;
+          }
+          .button {
+            background: -webkit-linear-gradient(top,#008dfd 0,#0370ea 100%);
+            border: 1px solid #076bd2;
+            border-radius: 3px;
+            color: #fff;
+            display: none;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 1.3;
+            padding: 8px 25px;
+            text-align: center;
+            text-shadow: 1px 1px 1px #076bd2;
+            letter-spacing: normal;
+          }
+          .center {
+            font-size: 34px;
+            text-align: center;
+            color: #777;
+            padding: 10px;
+          }
+          .final {
+            color: black;
+            padding-right: 3px;
+          }
+          .interim {
+            color: gray;
+          }
+          .info {
+            font-size: 34px;
+            text-align: center;
+            color: #777;
+            display: none;
+          }
+          .right {
+            float: right;
+          }
+          .sidebyside {
+            display: inline-block;
+            width: 45%;
+            min-height: 40px;
+            text-align: left;
+            vertical-align: top;
+          }
+          #headline {
+            font-size: 40px;
+            font-weight: 300;
+          }
+          #info {
+            font-size: 34px;
+            text-align: center;
+            color: #777;
+            visibility: hidden;
+          }
+          #results {
+            font-size: 50px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            min-height: 50px;
+            display: none;
+          }
+        </style>
+    </head>
+    <body>
+        <!-- title -->
+        <div id="title_container">
+            <div class="title_container">
+                <div id="headline" style="color: #fff;">
+                    who's that pokemon?!
+                </div>
+                <div class="bulby">
+                    <div class="name">
+                        <a id="name" href="http://www.cs.cmu.edu/~afandria/">
+                            &nbsp;andrew f-to&nbsp;
+                        </a>
+                    </div>
+                    <div class="name">
+                        <a target="pokedex" href="http://www.pokemon.com/us/pokedex/#001">
+                            <img class="bulb" src="b.png"></img>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="title_shadow">
+            <div class="title_shadow"></div>
+        </div>
+        <!-- /title -->
+        <!-- content -->
+        <div class="body_container" id="body_container">
+            <video id="koffing" width="700" height="700">
+                <source src="pika.mp4" type="video/mp4">
+                WHERE MY VIDEO AT?
+            </video>
+            <p class="center">
+                <canvas id="pokeball" width="700" height="700"></canvas>
+            </p>
+            <div class="right">
+                <img id="mic_img" src="mic.gif">
+            </div>
+            <div id="info">
+                <p id="info_start">
+                    click on the microphone icon and begin speaking.
+                </p>
+                <p id="info_speak_now">
+                    speak now.
+                </p>
+                <p id="info_no_speech">
+                    no speech was detected.
+                </p>
+                <p id="info_no_microphone" style="display:none">
+                    no microphone was found.
+                </p>
+                <p id="info_allow">
+                    click the "Allow" button above to enable your microphone.
+                </p>
+                <p id="info_denied">
+                    permission to use microphone was denied.
+                </p>
+                <p id="info_blocked">
+                    permission to use microphone is blocked. go to chrome://settings/contentExceptions#media-stream
+                </p>
+                <p id="info_upgrade">
+                    web Speech API is not supported by this browser.
+                </p>
+            </div>
+            <div id="results">
+                <span id="final_span" class="final"></span>
+                <span id="interim_span" class="interim"></span>
+                <p>
+            </div>
+        </div>
+        <!-- /content -->
+        <script>
+            var played = false;
+
+            function initialize_pika_power() {
+                var pokeball = document.getElementById('pokeball');
+                var context = pokeball.getContext('2d');
+                var image = new Image();
+                image.onload = function () {
+                    context.drawImage(image, 0, 0, 1024, 1024, pokeball.width / 2 - 512, pokeball.height / 2 - 512, 1024, 1024);
+                };
+                image.src = 'pika.png';
+            }
+            initialize_pika_power();
+
+            function draw(v, c, w, h) {
+                if (v.paused || v.ended) return false;
+                c.drawImage(v, 0, 0, w, h);
+                setTimeout(draw, 100, v, c, w, h);
+            }
+
+            function lose_pika_power() {
+                if (played) {
+                    return;
+                }
+                var canvas = document.getElementById('pokeball');
+                var context = canvas.getContext('2d');
+                var video = document.getElementById('koffing');
+                video.addEventListener('play', function () {
+                    draw(this, context, canvas.clientWidth, canvas.clientHeight);
+                }, false);
+                video.play();
+                headline.innerHTML = "it's pikachu!!!";
+            }
+            var final_transcript = '';
+            var recognizing = false;
+            var ignore_onend;
+            var start_timestamp;
+            if (!('webkitSpeechRecognition' in window)) {
+                upgrade();
+            } else {
+                var recognition = new webkitSpeechRecognition();
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognition.onstart = function () {
+                    recognizing = true;
+                    showInfo('info_speak_now');
+                    mic_img.src = 'mic-animate.gif';
+                };
+                recognition.onerror = function (event) {
+                    if (event.error == 'no-speech') {
+                        mic_img.src = 'mic.gif';
+                        showInfo('info_no_speech');
+                        ignore_onend = true;
+                    }
+                    if (event.error == 'audio-capture') {
+                        mic_img.src = 'mic.gif';
+                        showInfo('info_no_microphone');
+                        ignore_onend = true;
+                    }
+                    if (event.error == 'not-allowed') {
+                        if (event.timeStamp - start_timestamp < 100) {
+                            showInfo('info_blocked');
+                        } else {
+                            showInfo('info_denied');
+                        }
+                        ignore_onend = true;
+                    }
+                };
+                recognition.onend = function () {
+                    recognizing = false;
+                    if (ignore_onend) {
+                        return;
+                    }
+                    mic_img.src = 'mic.gif';
+                    if (!final_transcript) {
+                        showInfo('info_start');
+                        return;
+                    }
+                    showInfo('');
+                    if (window.getSelection) {
+                        window.getSelection().removeAllRanges();
+                        var range = document.createRange();
+                        range.selectNode(document.getElementById('final_span'));
+                        window.getSelection().addRange(range);
+                    }
+                };
+                recognition.onresult = function (event) {
+                    var interim_transcript = '';
+                    for (var i = event.resultIndex; i < event.results.length; ++i) {
+                        if (event.results[i].isFinal) {
+                            final_transcript += event.results[i][0].transcript;
+                        } else {
+                            interim_transcript += event.results[i][0].transcript;
+                        }
+                    }
+                    if (final_transcript.toLowerCase().indexOf("pikachu") > -1 || interim_transcript.toLowerCase().indexOf("pikachu") > -1) {
+                        lose_pika_power();
+                        played = true;
+                    }
+                    final_transcript = capitalize(final_transcript);
+                    final_span.innerHTML = linebreak(final_transcript);
+                    interim_span.innerHTML = linebreak(interim_transcript);
+                    if (played) {
+                        // stop dis
+                        var fake_event = new CustomEvent(
+                            "lel", {
+                                detail: {
+                                    message: "the biggest event of the year!",
+                                    time: new Date(),
+                                },
+                                bubbles: true,
+                                cancelable: true
+                            }
+                        );
+                        startButton(fake_event);
+                    }
+                };
+            }
+
+            function upgrade() {
+                showInfo('info_upgrade');
+            }
+            var two_line = /\n\n/g;
+            var one_line = /\n/g;
+
+            function linebreak(s) {
+                return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+            }
+            var first_char = /\S/;
+
+            function capitalize(s) {
+                return s.replace(first_char, function (m) {
+                    return m.toUpperCase();
+                });
+            }
+
+            function startButton(event) {
+                if (recognizing) {
+                    recognition.stop();
+                    return;
+                }
+                final_transcript = '';
+                recognition.lang = 'en-US';
+                recognition.start();
+                ignore_onend = false;
+                final_span.innerHTML = '';
+                interim_span.innerHTML = '';
+                mic_img.src = 'mic-slash.gif';
+                showInfo('info_allow');
+                start_timestamp = event.timeStamp;
+            }
+
+            function showInfo(s) {
+                if (s) {
+                    for (var child = info.firstChild; child; child = child.nextSibling) {
+                        if (child.style) {
+                            child.style.display = child.id == s ? 'inline' : 'none';
+                        }
+                    }
+                    info.style.visibility = 'visible';
+                    mic_img.style.visibility = 'visible';
+                } else {
+                    info.style.visibility = 'hidden';
+                    mic_img.style.visibility = 'hidden';
+                }
+            }
+            var fake_event = new CustomEvent(
+                "lel", {
+                    detail: {
+                        message: "the biggest event of the year!",
+                        time: new Date(),
+                    },
+                    bubbles: true,
+                    cancelable: true
+                }
+            );
+            startButton(fake_event);
+        </script>
+    </body>
+</html>
